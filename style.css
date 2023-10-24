@@ -1,0 +1,148 @@
+:root {
+    --color-background-main: hsl(217, 54%, 11%);
+    --color-background-card: hsl(216, 50%, 16%);
+    --color-line: hsl(215, 32%, 27%);
+    --color-medium-1: rgba(255, 255, 255, 0.20);
+    --color-text: rgba(255, 255, 255, 0.40);
+    --color-text-title: hsl(0, 0%, 100%);
+    --color-accent: hsl(178, 100%, 50%);
+    --color-focus: hsl(215, 51%, 70%);
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-background-main);
+    color: var(--color-text);
+    font-family: 'Outfit', sans-serif;
+}
+
+.card {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 327px;
+    height: 544px;
+    padding: 24px;
+    background: var(--color-background-card);
+    border-radius: 16px;
+}
+
+.card-image:hover {
+    width: 280px;
+    height: 280px;
+    background-color: var(--color-focus);
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.image {
+    border-radius: 8px;
+    transition: .5s ease;
+}
+
+/* Hover - image decrease opacity */
+.card-image:hover .image {
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+/*No-hover - overlay is invisible */
+.overlay-container {
+    position: relative;
+    top: -60%;
+    display: none;
+    transition: .5s ease;
+}
+
+/* Hover - overlay is visible */
+.card-image:hover .overlay-container {
+    display: flex;
+    justify-content: center;
+}
+
+.title h2 {
+    margin: 8px 0;
+    color: var(--color-text-title);
+    font-size: 22px;
+}
+
+.description p {
+    margin: 16px 0 16px;
+    line-height: 1.5rem;
+    font-weight: 300;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-line);
+    font-size: 14px;
+    padding-bottom: 14px;
+}
+
+.info-value,
+.info-time {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 20px;
+}
+
+.info-value {
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+.info-value .icon {
+    height: 20px;
+}
+
+.info-time .icon {
+    height: 20px;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 0 2px;
+}
+
+.author-avatar {
+    height: 32px;
+}
+
+.author-avatar img {
+    border: 1px solid var(--color-text-title);
+    border-radius: 50%;
+}
+
+.author-text p {
+    margin: 0;
+    padding: 0;
+}
+
+.author-text span {
+    color: var(--color-text-title);
+    height: 16px;
+}
+
+.link:hover {
+    cursor: pointer;
+    color: var(--color-accent);
+}
+
+.attribution {
+    display: none;
+}
